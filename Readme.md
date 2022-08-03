@@ -6,5 +6,6 @@
     - configuration plugins in after/ and some in init.vim
 
 ## TODO: 
-    rebase from init.vim to init.lua
-    rebase from Vim PLug to packer
+
+    - rebase from init.vim to init.lua
+    - rebase from Vim PLug to packer
