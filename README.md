@@ -7,5 +7,6 @@
 
 ## TODO: 
 
-    - rebase from init.vim to init.lua
-    - rebase from Vim PLug to packer
+    - DONE: rebase from init.vim to init.lua
+    - DONE: rebase from Vim PLug to packer
+    - struct better settings.lua end vim.cmd options
