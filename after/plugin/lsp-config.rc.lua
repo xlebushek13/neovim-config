@@ -1,6 +1,12 @@
-local nvim_lsp = require('lspconfig')
-local protocol = require'vim.lsp.protocol'
+local status, nvim_lsp = pcall(require, "lspconfig")
+if (not status) then return end
+local status, protocol = pcall(require, "vim.lsp.protocol")
+if (not status) then return end
+local status, installer = pcall(require, "nvim-lsp-installer")
+if (not status) then return end
 
+
+installer.setup({})
 -- Use an on_attach function to only map the following keys 
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -55,6 +61,11 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
+
+nvim_lsp.pylsp.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
 
 nvim_lsp.flow.setup {
     on_attach = on_attach,

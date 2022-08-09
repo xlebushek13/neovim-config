@@ -1,31 +1,54 @@
-return require('packer').startup(
-  function(use)
+local status, packer = pcall(require, "packer")
+if (not status) then
+  print("Packer is not installed")
+  return
+end
+
+vim.cmd [[packadd packer.nvim]]
+
+packer.startup(function(use)
     use 'wbthomason/packer.nvim'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/nvim-cmp'
-    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-    use 'hrsh7th/cmp-path'
-    use 'saadparwaiz1/cmp_luasnip'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+    use 'nvim-lua/plenary.nvim'
+    use 'onsails/lspkind-nvim' -- vscode-like pictograms
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/nvim-cmp'
+    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use 'hrsh7th/cmp-path'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'neovim/nvim-lspconfig'
+    use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+    use 'tami5/lspsaga.nvim'
+    use 'L3MON4D3/LuaSnip'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+    use 'kyazdani42/nvim-web-devicons'
+    use 'nvim-telescope/telescope.nvim'
+    use 'nvim-telescope/telescope-file-browser.nvim'
+    use 'windwp/nvim-autopairs'
+    use 'windwp/nvim-ts-autotag'
+    use 'norcalli/nvim-colorizer.lua'
+    use 'folke/zen-mode.nvim'
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+    use 'akinsho/nvim-bufferline.lua'
+    use 'lewis6991/gitsigns.nvim'
+    use 'dinhhuy258/git.nvim' -- For git blame & browse
     use 'kristijanhusak/defx-git'
     use 'kristijanhusak/defx-icons'
-    use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
-    use 'tami5/lspsaga.nvim'
-    use 'folke/lsp-colors.nvim'
-    use 'L3MON4D3/LuaSnip'
-    use 'nvim-treesitter/nvim-treesitter'
     use 'simrat39/rust-tools.nvim'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'onsails/lspkind-nvim'
-    use 'nvim-lua/popup.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
-    use 'windwp/nvim-autopairs'
     use {
         "akinsho/toggleterm.nvim",
         tag = 'v2.*',
@@ -56,19 +79,15 @@ return require('packer').startup(
             require('crates').setup()
         end,
     }
-    use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use 'justinmk/vim-sneak'
     use 'folke/todo-comments.nvim'
     use 'simrat39/symbols-outline.nvim'
-    use 'norcalli/nvim-colorizer.lua'
     use 'nvim-telescope/telescope-project.nvim'
     use 'p00f/nvim-ts-rainbow'
-    use 'windwp/nvim-ts-autotag'
     use 'lyokha/vim-xkbswitch'
     use 'Yggdroot/indentLine'
     use 'kyazdani42/nvim-tree.lua'
     use 'numToStr/Comment.nvim'
-    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
     use 'airblade/vim-gitgutter'
     use {
       'navarasu/onedark.nvim',
