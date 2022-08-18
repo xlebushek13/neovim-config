@@ -21,6 +21,7 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'buffer' },
+        { name = 'luasnip' }, -- For luasnip users.
     },
         {
             { name = 'buffer' },
@@ -33,6 +34,9 @@ cmp.setup({
         },
         {
             { name = 'cmp_tabnine' },
+        },
+        {
+            { name = 'luasnip' },
         },
         {
             { name = 'nvim_lsp_signature_help' }

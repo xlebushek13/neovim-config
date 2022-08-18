@@ -84,10 +84,10 @@ bufferline.setup({
         -- [focused and unfocused]. eg: { '|', '|' }
         separator_style = "thin",
         enforce_regular_tabs = false,
-        always_show_bufferline = false,
+        always_show_bufferline = true,
         sort_by = "id",
     },
 })
 
-vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
-vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
+vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>', {})
+vim.keymap.set('n', '<Tab>', '<Cmd>BufferNext<CR>', {})

@@ -67,6 +67,16 @@ nvim_lsp.pylsp.setup {
     capabilities = capabilities
 }
 
+nvim_lsp.html.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
+nvim_lsp.jsonls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
 nvim_lsp.flow.setup {
     on_attach = on_attach,
     capabilities = capabilities
@@ -78,7 +88,7 @@ nvim_lsp.tsserver.setup {
     capabilities = capabilities
     }
 
-nvim_lsp.vuels.setup {
+nvim_lsp.vls.setup {
     on_attach = on_attach,
     filetypes = { "vue" },
     init_options = {
@@ -91,18 +101,13 @@ nvim_lsp.vuels.setup {
                     useScaffoldSnippets = true 
                     },
                 format = {
-                    defaultFormatter = {
-                        js = "prettier",
-                        ts = "prettier"
-                        },
-
                     options = {
                         tabSize = 4,
                         useTabs = true,
                         },
                     },
                 experimental = {
-templateInterpolationService = true,
+                    templateInterpolationService = true,
                     },
                 validation = {
                     script = true,
@@ -118,7 +123,7 @@ templateInterpolationService = true,
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
+  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
   init_options = {
     linters = {
       eslint = {

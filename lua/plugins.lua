@@ -37,12 +37,15 @@ packer.startup(function(use)
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
     use 'norcalli/nvim-colorizer.lua'
-    use 'folke/zen-mode.nvim'
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
-    use 'akinsho/nvim-bufferline.lua'
+    -- use 'akinsho/nvim-bufferline.lua'
+    use {
+        'romgrk/barbar.nvim',
+        requires = {'kyazdani42/nvim-web-devicons'}
+    }
     use 'lewis6991/gitsigns.nvim'
     use 'dinhhuy258/git.nvim' -- For git blame & browse
     use 'kristijanhusak/defx-git'
@@ -85,28 +88,27 @@ packer.startup(function(use)
     use 'nvim-telescope/telescope-project.nvim'
     use 'p00f/nvim-ts-rainbow'
     use 'lyokha/vim-xkbswitch'
-    use 'Yggdroot/indentLine'
-    use 'kyazdani42/nvim-tree.lua'
+    -- use 'Yggdroot/indentLine'
+    use "lukas-reineke/indent-blankline.nvim"
     use 'numToStr/Comment.nvim'
     use 'airblade/vim-gitgutter'
-    use {
-      'navarasu/onedark.nvim',
-      config = function ()
-        require('onedark').setup {
-
-          style = 'cool',
-          transparent = true,
-          code_style = {
-              comments = 'italic',
-              keywords = 'none',
-              functions = 'italic',
-              strings = 'none',
-              variables = 'none'
-          },
-        }
-      end
-    }
+    use 'olimorris/onedarkpro.nvim'
     use 'mfussenegger/nvim-dap'
     use 'othree/html5-syntax.vim'
+    use {'akinsho/git-conflict.nvim', tag = "*", config = function()
+        require('git-conflict').setup()
+    end}
+    use 'petertriho/nvim-scrollbar'
+    use 'andweeb/presence.nvim'
+    use "rafamadriz/friendly-snippets"
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        requires = { 
+            "nvim-lua/plenary.nvim",
+            "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+        }
+    }
   end
 )

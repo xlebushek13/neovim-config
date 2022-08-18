@@ -105,6 +105,7 @@ vim.cmd("nmap dQ ci'")
 
 vim.cmd('nmap <Space>gd :Git diff<CR>')
 vim.cmd('nmap <Space>gg :LazyGit<CR>')
+vim.cmd('nmap <Space>gc :GitConflictListQf<CR>')
 vim.cmd('nmap <Space>gu :GitGutterUndoHunk<CR>')
 vim.cmd('nmap <Space>gp :GitGutterPreviewHunk<CR>')
 vim.cmd('nmap <Space>gn :GitGutterNextHunk<CR>')
@@ -155,7 +156,7 @@ vim.cmd('nmap sc :RustOpenCargo<CR>')
 
 -- NvimTreeToggle keybinding
 
-vim.cmd('nmap <Space>e :NvimTreeToggle<CR>')
+vim.cmd('nmap <Space>e :NeoTreeShowToggle<CR>')
 
 -- Search and replace keybinding
 
@@ -236,3 +237,6 @@ vim.cmd('nnoremap <silent> gr <Cmd>lua vim.lsp.buf.references()<CR>')
 -- Buffer next for vimwiki files (because <TAB> not working in they)
 
 vim.cmd('nmap sb :bnext<CR>')
+
+vim.cmd('nmap <CR> <Plug>(Kakoune)')
+vim.cmd('vmap <CR> <Plug>(Kakoune)')

@@ -1,0 +1,38 @@
+local status, onedark = pcall(require, "onedarkpro")
+if (not status) then return end
+
+onedark.setup({
+
+  dark_theme = "onedark_vivid", -- The default dark theme
+  light_theme = "onelight", -- The default light theme
+  -- The theme function can be overwritten with a string value for the theme
+  theme = function()
+      if vim.o.background == "dark" then
+          return config.dark_theme
+      else
+          return config.light_theme
+      end
+  end,
+  plugins = { -- Override which plugins highlight groups are loaded
+      -- NOTE: Plugins have been omitted for brevity - Please see the plugins section of the README
+  },
+  styles = { -- Choose from "bold,italic,underline"
+      strings = "NONE", -- Style that is applied to strings.
+      comments = "NONE", -- Style that is applied to comments
+      keywords = "NONE", -- Style that is applied to keywords
+      functions = "NONE", -- Style that is applied to functions
+      variables = "NONE", -- Style that is applied to variables
+      virtual_text = "NONE", -- Style that is applied to virtual text
+  },
+  options = {
+      bold = true, -- Use the themes opinionated bold styles?
+      italic = true, -- Use the themes opinionated italic styles?
+      underline = true, -- Use the themes opinionated underline styles?
+      undercurl = true, -- Use the themes opinionated undercurl styles?
+      cursorline = true, -- Use cursorline highlighting?
+      transparency = true, -- Use a transparent background?
+      terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
+      window_unfocussed_color = true, -- When the window is out of focus, change the normal background?
+  }
+
+})

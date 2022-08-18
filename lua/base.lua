@@ -1,4 +1,5 @@
 vim.cmd("autocmd!")
+vim.opt.updatetime = 300
 vim.opt.undofile = true
 vim.opt.undodir = "/Users/xlebushek/.vimundo"
 vim.opt.syntax = "enable"
@@ -39,7 +40,8 @@ vim.g.gitgutter_async = 0
 vim.g.gitgutter_max_signs = 2000
 vim.g.XkbSwitchLib = '/usr/local/bin/libInputSourceSwitcher.dylib'
 vim.g.XkbSwitchEnabled = 1
-vim.g.indentLine_char = '|'
+vim.g.indentLine_setColors = 0
+-- vim.g.indentLine_char = '|'
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
@@ -67,6 +69,7 @@ if has('nvim')
     set smarttab
     set nocompatible
     set si
+    set autoread
     filetype plugin indent on
     set backspace=start,eol,indent
     set path+=**
@@ -75,6 +78,7 @@ if has('nvim')
 
     highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=LightBlue
     highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
+    set t_Co=256
 
     augroup BgHighlight
     autocmd!
@@ -104,9 +108,9 @@ if has('nvim')
         autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 
-        au BufWinEnter *.json :IndentLinesToggle
         au BufWinEnter *.vue set shiftwidth=4 
-        au BufWinEnter *.ts set shiftwidth=4 
+        au BufWinEnter *.ts set shiftwidth=2 
+        au BufWinEnter *.tsx set shiftwidth=2 
 
         set termguicolors
 
@@ -117,4 +121,7 @@ if has('nvim')
         cnoreabbrev g Git
         cnoreabbrev gopen GBrowse
         set clipboard+=unnamedplus
+
+        set updatetime=300
+        autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
