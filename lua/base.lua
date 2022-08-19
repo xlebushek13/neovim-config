@@ -36,8 +36,6 @@ vim.opt.fileencoding = 'utf-8'
 
 vim.wo.number = true
 
-vim.g.gitgutter_async = 0
-vim.g.gitgutter_max_signs = 2000
 vim.g.XkbSwitchLib = '/usr/local/bin/libInputSourceSwitcher.dylib'
 vim.g.XkbSwitchEnabled = 1
 vim.g.indentLine_setColors = 0
@@ -98,8 +96,6 @@ if has('nvim')
         au BufNewFile,BufRead *.mdx set filetype=markdown
         au BufNewFile,BufRead *.flow set filetype=javascript
         au BufNewFile,BufRead *.fish set filetype=fish
-
-        autocmd BufWritePost * GitGutter
 
         set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 

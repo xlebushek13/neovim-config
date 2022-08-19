@@ -106,11 +106,12 @@ vim.cmd("nmap dQ ci'")
 vim.cmd('nmap <Space>gd :Git diff<CR>')
 vim.cmd('nmap <Space>gg :LazyGit<CR>')
 vim.cmd('nmap <Space>gc :GitConflictListQf<CR>')
-vim.cmd('nmap <Space>gu :GitGutterUndoHunk<CR>')
-vim.cmd('nmap <Space>gp :GitGutterPreviewHunk<CR>')
-vim.cmd('nmap <Space>gn :GitGutterNextHunk<CR>')
+vim.cmd('nmap <Space>gu :Gitsigns reset_hunk<CR>')
+vim.cmd('nmap <Space>gp :Gitsigns preview_hunk<CR>')
+vim.cmd('nmap <Space>gn :Gitsigns next_hunk<CR>')
 
 -- Ease find and replace keybinding
+
 
 vim.cmd('nnoremap sa :edit<CR>')
 
@@ -156,7 +157,7 @@ vim.cmd('nmap sc :RustOpenCargo<CR>')
 
 -- NvimTreeToggle keybinding
 
-vim.cmd('nmap <Space>e :NeoTreeShowToggle<CR>')
+vim.cmd('nmap <Space>e :NvimTreeToggle<CR>')
 
 -- Search and replace keybinding
 
