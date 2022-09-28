@@ -238,6 +238,3 @@ vim.cmd('nnoremap <silent> gr <Cmd>lua vim.lsp.buf.references()<CR>')
 -- Buffer next for vimwiki files (because <TAB> not working in they)
 
 vim.cmd('nmap sb :bnext<CR>')
-
-vim.cmd('nmap <CR> <Plug>(Kakoune)')
-vim.cmd('vmap <CR> <Plug>(Kakoune)')

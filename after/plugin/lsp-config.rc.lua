@@ -121,9 +121,40 @@ nvim_lsp.vls.setup {
         }
     }
 
+nvim_lsp.marksman.setup{
+    filetypes={"md", "vimwiki"}
+}
+
+nvim_lsp.taplo.setup{}
+nvim_lsp.yamlls.setup{}
+
+nvim_lsp.dockerls.setup{}
+
+local function eslint_config_exists()
+  local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
+
+  if not vim.tbl_isempty(eslintrc) then
+    return true
+  end
+
+  if vim.fn.filereadable("package.json") then
+    if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
+      return true
+    end
+  end
+
+  return false
+end
+
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
+  root_dir = function()
+    if not eslint_config_exists() then
+      return nil
+    end
+    return vim.fn.getcwd()
+  end,
+  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc', 'vue' },
   init_options = {
     linters = {
       eslint = {
@@ -152,6 +183,7 @@ nvim_lsp.diagnosticls.setup {
       javascriptreact = 'eslint',
       typescript = 'eslint',
       typescriptreact = 'eslint',
+      vue = 'eslint'
     },
     formatters = {
       eslint_d = {
@@ -161,9 +193,9 @@ nvim_lsp.diagnosticls.setup {
         rootPatterns = { '.git' },
       },
       prettier = {
-        command = 'prettier_d_slim',
+        command = 'prettier',
         rootPatterns = { '.git' },
-        -- requiredFiles: { 'prettier.config.js' },
+        -- requiredFiles = { 'prettier.config.js' },
         args = { '--stdin', '--stdin-filepath', '%filename' }
       }
     },
@@ -177,6 +209,7 @@ nvim_lsp.diagnosticls.setup {
       typescript = 'prettier',
       typescriptreact = 'prettier',
       json = 'prettier',
+      vue = 'prettier'
     }
   }
 }

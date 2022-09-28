@@ -32,7 +32,13 @@ packer.startup(function(use)
         run = ':TSUpdate'
     }
     use 'kyazdani42/nvim-web-devicons'
-    use 'nvim-telescope/telescope.nvim'
+    use({
+        "nvim-telescope/telescope.nvim",
+        requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
+        config = function()
+            require("telescope").load_extension("lazygit")
+        end,
+    })
     use 'nvim-telescope/telescope-file-browser.nvim'
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
@@ -72,7 +78,6 @@ packer.startup(function(use)
     })
     use 'vimwiki/vimwiki'
     use 'ethanholz/nvim-lastplace'
-    use 'kdheepak/lazygit.nvim'
     use 'folke/which-key.nvim'
     use {
         'saecki/crates.nvim',
