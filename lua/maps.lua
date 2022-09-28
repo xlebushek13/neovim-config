@@ -103,7 +103,7 @@ vim.cmd("nmap dQ ci'")
 
 -- Git keybindings
 
-vim.cmd('nmap <Space>gd :Git diff<CR>')
+vim.cmd('nmap <Space>gd :GitDiff<CR>')
 vim.cmd('nmap <Space>gg :LazyGit<CR>')
 vim.cmd('nmap <Space>gc :GitConflictListQf<CR>')
 vim.cmd('nmap <Space>gu :Gitsigns reset_hunk<CR>')
