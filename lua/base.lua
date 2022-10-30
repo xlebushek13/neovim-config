@@ -60,6 +60,7 @@ set t_BE=
 set nobackup
 set backupskip=/tmp/*,/private/tmp/*
 if has('nvim')
+    set guifont= "JetBrains Mono:12"
     set inccommand=split
     endif
     set nosc noru nosm
