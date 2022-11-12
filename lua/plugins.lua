@@ -32,6 +32,8 @@ packer.startup(function(use)
         run = ':TSUpdate'
     }
     use 'kyazdani42/nvim-web-devicons'
+    use { 'TimUntersberger/neogit', requires = {'nvim-lua/plenary.nvim'} }
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     use({
         "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },

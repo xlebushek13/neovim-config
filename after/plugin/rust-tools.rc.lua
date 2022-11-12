@@ -17,7 +17,7 @@ rust_tools.setup({
          ["rust-analyzer"] = {
                 -- enable clippy on save
                 checkOnSave = {
-                    command = "cargo clippy"
+                    command = "clippy"
                 },
             }
     },

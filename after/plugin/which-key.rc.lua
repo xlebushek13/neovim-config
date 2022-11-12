@@ -5,7 +5,7 @@ which_key.register({
     ["c"] = { ":bdelete %<CR>", "Close Buffer" },
     l = {
         name = "LSP",
-        f = { "<cmd>lua vim.lsp.buf.formatting_seq_sync()<cr>", "Format" },
+        f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
         w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
