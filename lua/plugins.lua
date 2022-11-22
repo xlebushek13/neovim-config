@@ -1,7 +1,7 @@
 local status, packer = pcall(require, "packer")
 if (not status) then
-  print("Packer is not installed")
-  return
+    print("Packer is not installed")
+    return
 end
 
 vim.cmd [[packadd packer.nvim]]
@@ -17,7 +17,7 @@ packer.startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/nvim-cmp'
-    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
     use 'hrsh7th/cmp-path'
     use 'saadparwaiz1/cmp_luasnip'
     use 'neovim/nvim-lspconfig'
@@ -32,7 +32,7 @@ packer.startup(function(use)
         run = ':TSUpdate'
     }
     use 'kyazdani42/nvim-web-devicons'
-    use { 'TimUntersberger/neogit', requires = {'nvim-lua/plenary.nvim'} }
+    use { 'TimUntersberger/neogit', requires = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' } }
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     use({
         "nvim-telescope/telescope.nvim",
@@ -52,30 +52,30 @@ packer.startup(function(use)
     -- use 'akinsho/nvim-bufferline.lua'
     use {
         'romgrk/barbar.nvim',
-        requires = {'kyazdani42/nvim-web-devicons'}
+        requires = { 'kyazdani42/nvim-web-devicons' }
     }
     use 'lewis6991/gitsigns.nvim'
     use 'dinhhuy258/git.nvim' -- For git blame & browse
     use 'kristijanhusak/defx-git'
     use 'kristijanhusak/defx-icons'
-    use 'williamboman/nvim-lsp-installer'
+    -- use 'williamboman/nvim-lsp-installer'
     use 'simrat39/rust-tools.nvim'
     use {
         "akinsho/toggleterm.nvim",
         tag = 'v2.*',
         config = function()
-          require("toggleterm").setup{
-            direction = 'horizontal'
-          }
+            require("toggleterm").setup {
+                direction = 'horizontal'
+            }
         end
     }
     use({
         "Pocco81/auto-save.nvim",
         config = function()
-             require("auto-save").setup {
+            require("auto-save").setup {
                 -- your config goes here
                 -- or just leave it empty :)
-             }
+            }
         end,
     })
     use 'vimwiki/vimwiki'
@@ -101,9 +101,9 @@ packer.startup(function(use)
     use 'olimorris/onedarkpro.nvim'
     use 'mfussenegger/nvim-dap'
     use 'othree/html5-syntax.vim'
-    use {'akinsho/git-conflict.nvim', tag = "*", config = function()
+    use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
         require('git-conflict').setup()
-    end}
+    end }
     use 'petertriho/nvim-scrollbar'
     use 'andweeb/presence.nvim'
     use "rafamadriz/friendly-snippets"
@@ -114,5 +114,5 @@ packer.startup(function(use)
         },
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
-  end
+end
 )

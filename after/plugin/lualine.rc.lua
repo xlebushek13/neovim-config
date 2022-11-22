@@ -2,9 +2,9 @@ local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
 lualine.setup {
-  options = {
-    icons_enabled = true,
-    theme = 'onedarkpro',
-  },
-  extensions = { 'fugitive' }
+    options = {
+        icons_enabled = true,
+        theme = 'onedarkpro',
+    },
+    extensions = { 'fugitive' }
 }

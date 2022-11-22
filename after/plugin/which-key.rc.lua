@@ -10,7 +10,7 @@ which_key.register({
         d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
         w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
         i = { "<cmd>LspInfo<cr>", "Info" },
-        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+        I = { "<cmd>Mason<cr>", "Installer Info" },
         j = {
             vim.diagnostic.goto_next,
             "Next Diagnostic",
@@ -32,4 +32,3 @@ which_key.register({
 },
     { prefix = "<Space>" }
 )
-

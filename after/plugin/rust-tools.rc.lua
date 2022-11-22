@@ -14,11 +14,11 @@ rust_tools.setup({
     server = {
         cmd = { vim.fn.stdpath "data" .. "/lsp_servers/rust_analyzer/rust-analyzer" },
 
-         ["rust-analyzer"] = {
-                -- enable clippy on save
-                checkOnSave = {
-                    command = "clippy"
-                },
-            }
+        ["rust-analyzer"] = {
+            -- enable clippy on save
+            checkOnSave = {
+                command = "clippy"
+            },
+        }
     },
 })

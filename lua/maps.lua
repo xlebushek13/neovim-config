@@ -66,7 +66,7 @@ vim.cmd('nmap <C-w><right> <C-w>>')
 vim.cmd('nmap <C-w><up> <C-w>+')
 vim.cmd('nmap <C-w><down> <C-w>-')
 
--- Sneak 
+-- Sneak
 
 vim.cmd('map f <Plug>Sneak_s')
 vim.cmd('map F <Plug>Sneak_S')
