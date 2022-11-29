@@ -150,6 +150,8 @@ nvim_lsp.taplo.setup {}
 nvim_lsp.yamlls.setup {}
 
 nvim_lsp.dockerls.setup {}
+nvim_lsp.intelephense.setup {}
+nvim_lsp.lemminx.setup {}
 
 local function eslint_config_exists()
     local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
