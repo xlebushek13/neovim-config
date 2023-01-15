@@ -3,8 +3,6 @@ if (not status) then return end
 
 onedark.setup {
 
-    dark_theme = "onedark", -- The default dark theme
-    light_theme = "onelight", -- The default light theme
     -- The theme function can be overwritten with a string value for the theme
     plugins = { -- Override which plugins highlight groups are loaded
         -- NOTE: Plugins have been omitted for brevity - Please see the plugins section of the README
@@ -30,4 +28,4 @@ onedark.setup {
 
 }
 
-vim.cmd("colorscheme onedarkpro")
+vim.cmd("colorscheme onedark")

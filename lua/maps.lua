@@ -155,6 +155,7 @@ vim.cmd('nmap sd :RustHoverActions<CR>')
 vim.cmd('nmap sR :RustRunnables<CR>')
 vim.cmd('nmap sc :RustOpenCargo<CR>')
 
+vim.cmd('nmap <Space>u :UndotreeToggle<CR>')
 -- NvimTreeToggle keybinding
 
 vim.cmd('nmap <Space>e :NvimTreeToggle<CR>')
@@ -197,6 +198,10 @@ vim.cmd('map sk <C-w>k')
 vim.cmd('map sj <C-w>j')
 vim.cmd('map sl <C-w>l')
 
+-- Dont Leave from visual after indent
+vim.cmd("vnoremap > >gv")
+vim.cmd("vnoremap < <gv")
+
 -- fzf find keybinding
 
 vim.cmd('noremap <silent>sff <Cmd>Telescope live_grep<CR>')
@@ -214,7 +219,7 @@ vim.cmd('let g:sneak#label = 1')
 
 -- Folding
 
-vim.cmd('map sf zfit')
+vim.cmd('map <Space>f zfit')
 vim.cmd('map so za')
 
 -- Select all
