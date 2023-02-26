@@ -13,7 +13,7 @@ prettier.setup {
         "scss",
         "less",
         "vue",
-        "rust",
-        "rs"
+        -- "rust",
+        -- "rs"
     }
 }

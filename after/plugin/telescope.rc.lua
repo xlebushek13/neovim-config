@@ -18,8 +18,11 @@ telescope.setup {
         },
     },
     extensions = {
+        ["ui-select"] = {
+            theme = "cursor"
+        },
         file_browser = {
-            theme = "dropdown",
+            theme = "cursor",
             -- disables netrw and use telescope-file-browser in its place
             -- hijack_netrw = true,
             mappings = {
@@ -41,6 +44,7 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
+telescope.load_extension("ui-select")
 
 vim.keymap.set('n', ';f',
     function()

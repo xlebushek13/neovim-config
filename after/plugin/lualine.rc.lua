@@ -6,5 +6,10 @@ lualine.setup {
         icons_enabled = true,
         theme = 'onedark',
     },
-    extensions = { 'fugitive' }
+    extensions = { 'fugitive' },
+    sections = {
+        lualine_c = {
+            'lsp_progress'
+        }
+    }
 }

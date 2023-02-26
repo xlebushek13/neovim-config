@@ -103,9 +103,9 @@ if has('nvim')
         autocmd FileType yaml setlocal shiftwidth=4 tabstop=4
 
 
-        au BufWinEnter *.vue set shiftwidth=4 
-        au BufWinEnter *.ts set shiftwidth=4 
-        au BufWinEnter *.tsx set shiftwidth=4 
+        au BufWinEnter *.vue set shiftwidth=4
+        au BufWinEnter *.ts set shiftwidth=4
+        au BufWinEnter *.tsx set shiftwidth=4
 
         set exrc
 
