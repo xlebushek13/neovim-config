@@ -42,11 +42,10 @@ lsp.configure('lua_ls', {
 lsp.skip_server_setup({ 'rust_analyzer' })
 
 
-lsp.setup()
 
 local rust_lsp = lsp.build_options('rust_analyzer', {
     checkOnSave = {
-        command = "check"
+        command = "cargo check"
     },
 })
 
@@ -70,6 +69,8 @@ require('rust-tools').setup({
     },
     server = rust_lsp
 })
+
+lsp.setup()
 
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 

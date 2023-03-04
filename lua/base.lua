@@ -1,7 +1,7 @@
 vim.cmd("autocmd!")
 vim.opt.updatetime = 300
 vim.opt.undofile = true
-vim.opt.undodir = "/Users/kitsune/.vimundo"
+vim.opt.undodir = "/home/kitsune/.vimundo"
 vim.opt.syntax = "enable"
 vim.opt.mouse = "a"
 vim.opt.smartindent = true
@@ -36,7 +36,7 @@ vim.opt.fileencoding = 'utf-8'
 
 vim.wo.number = true
 
-vim.g.XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
+vim.g.XkbSwitchLib = '/usr/lib/libxkbswitch.so'
 vim.g.XkbSwitchEnabled = 1
 vim.g.indentLine_setColors = 0
 -- vim.g.indentLine_char = '|'
