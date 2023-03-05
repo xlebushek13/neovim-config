@@ -110,8 +110,7 @@ vim.cmd('nmap <Space>gu :Gitsigns reset_hunk<CR>')
 vim.cmd('nmap <Space>gp :Gitsigns preview_hunk<CR>')
 vim.cmd('nmap <Space>gn :Gitsigns next_hunk<CR>')
 
--- Ease find and replace keybinding
-
+-- Reload current file
 
 vim.cmd('nnoremap sa :edit<CR>')
 

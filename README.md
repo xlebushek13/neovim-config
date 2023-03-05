@@ -1,9 +1,11 @@
-# My Neovim Config
+# Kitsune Neovim Config
 
 ## Instalation
 
 - clone this repo to ~/.config/nvim
 - after clone use PackerInstall dont worry about errors on first start neovim
+- change the undo dir in lua/base.lua for your username
+- change the path to xkb-switch lib by yuor system (in example used base linux path)
 
 ## Architecture
 
