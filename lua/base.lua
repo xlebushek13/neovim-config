@@ -53,13 +53,22 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 vim.opt.formatoptions:append { 'r' }
 vim.opt.clipboard:append { 'unnamedplus' }
 
+-- if vim.g.neovide then
+-- end
+vim.o.guifont = "MesloLGS NF:h8"
+vim.g.neovide_scale_factor = 1.0
+vim.g.neovide_no_idle = true
+vim.g.neovide_remember_window_size = false
+vim.g.neovide_input_use_logo = false
+vim.g.neovide_cursor_animation_length = 0
+
+
 vim.cmd([[
 autocmd!
 set t_BE=
 set nobackup
 set backupskip=/tmp/*,/private/tmp/*
 if has('nvim')
-    set guifont= "JetBrains Mono:12"
     set inccommand=split
     endif
     set nosc noru nosm
@@ -89,6 +98,10 @@ if has('nvim')
         autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
         endif
 
+
+au InsertLeave * let lastLangIndex=system('swaymsg -t get_inputs | grep -m1 "xkb_active_layout_index" | grep -oP "\d+"') | call jobstart('swaymsg input "* xkb_switch_layout 0"')
+au InsertEnter * :if exists("lastLangIndex") | call jobstart('swaymsg input "* xkb_switch_layout ' . lastLangIndex . '"') | endif
+
         autocmd InsertLeave * set nopaste
         au BufNewFile,BufRead *.es6 setf javascript
         au BufNewFile,BufRead *.tsx setf typescriptreact
@@ -102,7 +115,7 @@ if has('nvim')
         autocmd FileType yaml setlocal shiftwidth=4 tabstop=4
 
 
-        au BufWinEnter *.vue set shiftwidth=4
+        au BufWinEnter *.vue set shiftwidth=2
         au BufWinEnter *.ts set shiftwidth=4
         au BufWinEnter *.tsx set shiftwidth=4
 

@@ -19,6 +19,7 @@ return require('packer').startup({
             requires = { 'kyazdani42/nvim-web-devicons', opt = true }
         }
         use 'nvim-lua/plenary.nvim'
+        use { "catppuccin/nvim", as = "catppuccin" }
         use 'onsails/lspkind-nvim' -- vscode-like pictograms
         use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
         use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
@@ -94,7 +95,8 @@ return require('packer').startup({
         use 'simrat39/symbols-outline.nvim'
         use 'nvim-telescope/telescope-project.nvim'
         use 'p00f/nvim-ts-rainbow'
-        use 'lyokha/vim-xkbswitch'
+        use 'ivanesmantovich/xkbswitch.nvim'
+        -- use 'lyokha/vim-xkbswitch'
         -- use 'Yggdroot/indentLine'
         use "lukas-reineke/indent-blankline.nvim"
         use 'numToStr/Comment.nvim'

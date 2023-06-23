@@ -32,4 +32,4 @@ onedark.setup {
 
 }
 
-vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme catppuccin")

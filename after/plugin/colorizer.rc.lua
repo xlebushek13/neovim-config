@@ -1,7 +1,7 @@
 local status, colorizer = pcall(require, "colorizer")
 if (not status) then return end
 
-colorizer.setup({ 'css', 'html', 'vue' }, {
+colorizer.setup({ 'css', 'html', 'vue', 'ini' }, {
     RGB = true, -- #RGB hex codes
     RRGGBB = true, -- #RRGGBB hex codes
     RRGGBBAA = true, -- #RRGGBBAA hex codes
