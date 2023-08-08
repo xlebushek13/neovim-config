@@ -110,6 +110,7 @@ vim.cmd('nmap <Space>gu :Gitsigns reset_hunk<CR>')
 vim.cmd('nmap <Space>gp :Gitsigns preview_hunk<CR>')
 vim.cmd('nmap <Space>gn :Gitsigns next_hunk<CR>')
 
+
 -- Reload current file
 
 vim.cmd('nnoremap sa :edit<CR>')
@@ -167,6 +168,8 @@ vim.cmd('nmap sF :%s/')
 
 vim.cmd('nmap smg :Glow<CR>')
 vim.cmd('nmap smp :MarkdownPreview<CR>')
+-- vim.cmd('nmap <Space>m :!markserv &<CR>')
+vim.cmd('nmap <Space>m <Cmd>execute v:count . "ToggleTerm"<CR> markserv<CR>')
 
 -- Buffers edit
 

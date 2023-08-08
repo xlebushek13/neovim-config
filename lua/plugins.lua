@@ -29,7 +29,7 @@ return require('packer').startup({
             run = ':TSUpdate'
         }
         use 'kyazdani42/nvim-web-devicons'
-        use { 'TimUntersberger/neogit', requires = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' } }
+        use { 'NeogitOrg/neogit', requires = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' } }
         use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
         -- use 'WhoIsSethDaniel/lualine-lsp-progress.nvim'
@@ -79,7 +79,7 @@ return require('packer').startup({
         --         }
         --     end,
         -- })
-        use 'vimwiki/vimwiki'
+        -- use 'vimwiki/vimwiki'
         use 'ethanholz/nvim-lastplace'
         use 'folke/which-key.nvim'
         use {

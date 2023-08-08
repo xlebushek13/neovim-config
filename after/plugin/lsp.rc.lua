@@ -39,6 +39,19 @@ lsp.configure('lua_ls', {
     },
 })
 
+lsp.configure('pylsp', {
+    settings = {
+        pylsp = {
+            plugins = {
+                black = { enabled = true },
+                isort = { enabled = true, profile = "black" },
+                autopep8 = { enabled = false },
+                yapf = { enabled = false }
+            },
+        },
+    },
+})
+
 lsp.skip_server_setup({ 'rust_analyzer' })
 
 
