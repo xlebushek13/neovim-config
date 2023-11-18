@@ -1,6 +1,8 @@
 local lsp = require('lsp-zero')
+local mason = require('mason')
 local null_ls = require("null-ls")
 
+mason.setup()
 
 null_ls.setup({
     sources = {
@@ -57,7 +59,7 @@ lsp.configure('pylsp', {
     },
 })
 
-lsp.skip_server_setup({ 'rust_analyzer' })
+-- lsp.skip_server_setup({ 'rust_analyzer' })
 
 
 
@@ -107,34 +109,34 @@ local function border(hl_name)
 end
 
 local lspkind = require('lspkind')
-lsp.setup_nvim_cmp({
-    window = {
-        completion = {
-            border = border "CmpBorder",
-            winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-        },
-        documentation = {
-            border = border "CmpDocBorder",
-        },
-    },
-    snippet = {
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-        end,
-    },
-    sources = {
-        { name = 'nvim_lsp', keyword_length = 1 },
-        { name = 'buffer' },
-        -- { name = 'luasnip' }, -- For luasnip users.
-        -- { name = 'cmp_tabnine' },
-        { name = 'crates' },
-        { name = 'path' },
-        -- { name = 'nvim_lsp_signature_help' }
-    },
-    formatting = {
-        format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
-    }
-})
+-- lsp.setup_nvim_cmp({
+--     window = {
+--         completion = {
+--             border = border "CmpBorder",
+--             winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+--         },
+--         documentation = {
+--             border = border "CmpDocBorder",
+--         },
+--     },
+--     snippet = {
+--         expand = function(args)
+--             require('luasnip').lsp_expand(args.body)
+--         end,
+--     },
+--     sources = {
+--         { name = 'nvim_lsp', keyword_length = 1 },
+--         { name = 'buffer' },
+--         -- { name = 'luasnip' }, -- For luasnip users.
+--         -- { name = 'cmp_tabnine' },
+--         { name = 'crates' },
+--         { name = 'path' },
+--         -- { name = 'nvim_lsp_signature_help' }
+--     },
+--     formatting = {
+--         format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
+--     }
+-- })
 
 vim.diagnostic.config({
     virtual_text = true,

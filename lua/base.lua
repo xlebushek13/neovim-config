@@ -1,7 +1,7 @@
 vim.cmd("autocmd!")
 vim.opt.updatetime = 300
 vim.opt.undofile = true
-vim.opt.undodir = "/home/kitsune/.vimundo"
+-- vim.opt.undodir = "/home/kitsune/.vimundo"
 vim.opt.syntax = "enable"
 vim.opt.mouse = "a"
 vim.opt.smartindent = true
