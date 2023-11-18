@@ -4,6 +4,8 @@ local null_ls = require("null-ls")
 
 null_ls.setup({
     sources = {
+        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.diagnostics.ruff,
         null_ls.builtins.formatting.prettier.with({
             extra_args = function(params)
                 return params.options
@@ -15,6 +17,8 @@ null_ls.setup({
             end,
         }),
         null_ls.builtins.formatting.rustfmt,
+        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.isort,
         null_ls.builtins.completion.spell,
     },
 })
@@ -44,6 +48,7 @@ lsp.configure('pylsp', {
         pylsp = {
             plugins = {
                 black = { enabled = true },
+                mypy = { enabled = true },
                 isort = { enabled = true, profile = "black" },
                 autopep8 = { enabled = false },
                 yapf = { enabled = false }

@@ -20,9 +20,9 @@ return require('packer').startup({
         }
         use 'nvim-lua/plenary.nvim'
         use { "catppuccin/nvim", as = "catppuccin" }
-        use 'onsails/lspkind-nvim' -- vscode-like pictograms
+        use 'onsails/lspkind-nvim'            -- vscode-like pictograms
         use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-        use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+        use 'MunifTanjim/prettier.nvim'       -- Prettier plugin for Neovim's built-in LSP client
         use 'tami5/lspsaga.nvim'
         use {
             'nvim-treesitter/nvim-treesitter',
@@ -94,14 +94,37 @@ return require('packer').startup({
         use 'folke/todo-comments.nvim'
         use 'simrat39/symbols-outline.nvim'
         use 'nvim-telescope/telescope-project.nvim'
-        use 'p00f/nvim-ts-rainbow'
+        use 'HiPhish/nvim-ts-rainbow2'
         use 'ivanesmantovich/xkbswitch.nvim'
         -- use 'lyokha/vim-xkbswitch'
         -- use 'Yggdroot/indentLine'
         use "lukas-reineke/indent-blankline.nvim"
         use 'numToStr/Comment.nvim'
         use 'olimorris/onedarkpro.nvim'
-        use 'mfussenegger/nvim-dap'
+        use { 'mfussenegger/nvim-dap' }
+        use { 'mfussenegger/nvim-dap-python',
+            config = function()
+                local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+                require('dap-python').setup(path)
+            end
+        }
+        use { 'rcarriga/nvim-dap-ui',
+            config = function()
+                local dap = require("dap")
+                local dapui = require("dapui")
+                dapui.setup()
+                dap.listeners.after.event_initialized["dapui_config"] = function()
+                    dapui.open()
+                end
+                dap.listeners.before.event_terminated["dapui_config"] = function()
+                    dapui.close()
+                end
+                dap.listeners.before.event_exited["dapui_config"] = function()
+                    dapui.close()
+                end
+            end
+
+        }
         use 'othree/html5-syntax.vim'
         use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
             require('git-conflict').setup()
@@ -113,7 +136,7 @@ return require('packer').startup({
             requires = {
                 'kyazdani42/nvim-web-devicons', -- optional, for file icons
             },
-            tag = 'nightly' -- optional, updated every week. (see issue #1193)
+            tag = 'nightly'                     -- optional, updated every week. (see issue #1193)
         }
 
         use {

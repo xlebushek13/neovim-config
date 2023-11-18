@@ -200,6 +200,7 @@ vim.cmd('map sk <C-w>k')
 vim.cmd('map sj <C-w>j')
 vim.cmd('map sl <C-w>l')
 
+
 -- Dont Leave from visual after indent
 vim.cmd("vnoremap > >gv")
 vim.cmd("vnoremap < <gv")
@@ -229,6 +230,10 @@ vim.cmd('map so za')
 vim.cmd('vmap <C-a> vgg<S-v>G')
 
 -- Open projects
+
+vim.cmd("nmap <Space>dpr :lua require'dap-python'.test_method()<CR>")
+vim.cmd("nmap <Space>db :DapToggleBreakpoint<CR>")
+
 
 vim.cmd("nmap spp :lua require'telescope'.extensions.project.project{}<CR>")
 

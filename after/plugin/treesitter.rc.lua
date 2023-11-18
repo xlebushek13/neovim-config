@@ -1,4 +1,5 @@
 local status, ts = pcall(require, "nvim-treesitter.configs")
+local rainbow = require('ts-rainbow')
 if (not status) then return end
 
 ts.setup {
@@ -31,6 +32,10 @@ ts.setup {
         enable = true,
         extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
         max_file_lines = nil, -- Do not enable for files with more than n lines, int
+        query = {
+            'rainbow-parens'
+        },
+        strategy = rainbow.strategy.global,
         colors = {
             "#9ece6a",
             "#f7768e",
@@ -40,14 +45,15 @@ ts.setup {
             "#f7768e",
             "#7aa2f7",
         },
-        termcolors = {
-            "green",
-            "red",
-            "blue",
-            "lightblue",
-            "green",
-            "red",
-            "blue",
+
+        hlgroups = {
+            'TSRainbowGrey',
+            'TSRainbowCyan',
+            'TSRainbowYellow',
+            'TSRainbowBlue',
+            'TSRainbowOrange',
+            'TSRainbowGreen',
+            'TSRainbowViolet',
         },
         disable = { "html", "php" },
     }
