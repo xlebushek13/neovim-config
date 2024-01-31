@@ -98,7 +98,47 @@ return require('packer').startup({
         use 'ivanesmantovich/xkbswitch.nvim'
         -- use 'lyokha/vim-xkbswitch'
         -- use 'Yggdroot/indentLine'
-        use "lukas-reineke/indent-blankline.nvim"
+        -- use { "lukas-reineke/indent-blankline.nvim",
+        --     config = function()
+        --         require('ibl').setup(
+        --             {
+        --                 event = "BufReadPost",
+        --                 scope = { enabled = true },
+        --                 {
+        --                     --     -- for example, context is off by default, use this to turn it on
+        --                     show_current_context = true,
+        --                     show_current_context_start = true,
+        --                 }
+        --             }
+        --         )
+        --     end
+        -- }
+        use {
+            'lukas-reineke/indent-blankline.nvim',
+            branch = 'v3',
+            event = 'BufReadPre',
+            config = function()
+                local hl_name_list = {
+                    'RainbowDelimiterRed',
+                    'RainbowDelimiterYellow',
+                    'RainbowDelimiterOrange',
+                    'RainbowDelimiterGreen',
+                    'RainbowDelimiterBlue',
+                    'RainbowDelimiterCyan',
+                    'RainbowDelimiterViolet',
+                }
+                require('ibl').setup({
+                    scope = {
+                        enabled = true,
+                        show_start = false,
+                        highlight = hl_name_list
+                    }
+                })
+                local hooks = require "ibl.hooks"
+                hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+            end,
+        }
+
         use 'numToStr/Comment.nvim'
         use 'olimorris/onedarkpro.nvim'
         use { 'mfussenegger/nvim-dap' }
