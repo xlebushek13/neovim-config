@@ -115,7 +115,7 @@ return require('packer').startup({
         -- }
         use {
             'lukas-reineke/indent-blankline.nvim',
-            branch = 'v3',
+            -- branch = 'v3',
             event = 'BufReadPre',
             config = function()
                 local hl_name_list = {
