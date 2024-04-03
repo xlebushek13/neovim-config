@@ -28,6 +28,7 @@ return require('packer').startup({
             'nvim-treesitter/nvim-treesitter',
             run = ':TSUpdate'
         }
+use { "nvim-neotest/nvim-nio" }
         use 'kyazdani42/nvim-web-devicons'
         use { 'NeogitOrg/neogit', requires = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' } }
         use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
