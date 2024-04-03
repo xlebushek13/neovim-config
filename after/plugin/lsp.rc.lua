@@ -45,6 +45,11 @@ lsp.configure('lua_ls', {
     },
 })
 
+lsp.configure('eslint', {
+
+
+})
+
 lsp.configure('pylsp', {
     settings = {
         pylsp = {
