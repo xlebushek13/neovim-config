@@ -45,8 +45,37 @@ lsp.configure('lua_ls', {
     },
 })
 
-lsp.configure('eslint', {
-
+lsp.configure('tsserver', {
+    -- settings = {
+    --     root_dir = function(...)
+    --         return require("lspconfig.util").root_pattern(".git")(...)
+    --     end,
+    --     single_file_support = false,
+    --     settings = {
+    --         typescript = {
+    --             inlayHints = {
+    --                 includeInlayParameterNameHints = "literal",
+    --                 includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+    --                 includeInlayFunctionParameterTypeHints = true,
+    --                 includeInlayVariableTypeHints = false,
+    --                 includeInlayPropertyDeclarationTypeHints = true,
+    --                 includeInlayFunctionLikeReturnTypeHints = true,
+    --                 includeInlayEnumMemberValueHints = true,
+    --             },
+    --         },
+    --         javascript = {
+    --             inlayHints = {
+    --                 includeInlayParameterNameHints = "all",
+    --                 includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+    --                 includeInlayFunctionParameterTypeHints = true,
+    --                 includeInlayVariableTypeHints = true,
+    --                 includeInlayPropertyDeclarationTypeHints = true,
+    --                 includeInlayFunctionLikeReturnTypeHints = true,
+    --                 includeInlayEnumMemberValueHints = true,
+    --             },
+    --         },
+    --     },
+    -- },
 
 })
 
@@ -119,9 +148,9 @@ local cmp = require('cmp')
 
 cmp.setup({
 
-  mapping = cmp.mapping.preset.insert({
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
-  }),
+    mapping = cmp.mapping.preset.insert({
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    }),
     window = {
         completion = {
             border = border "CmpBorder",

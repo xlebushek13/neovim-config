@@ -23,7 +23,8 @@ ts.setup {
         "scss",
         "vue",
         "pug",
-        "typescript"
+        "typescript",
+        "lua"
     },
     autotag = {
         enable = true,

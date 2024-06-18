@@ -26,7 +26,7 @@ vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
 vim.opt.smarttab = true
 vim.opt.breakindent = true
-vim.opt.wrap = false -- No Wrap lines
+vim.opt.wrap = false         -- No Wrap lines
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
@@ -62,7 +62,7 @@ vim.g.neovide_no_idle = true
 vim.g.neovide_remember_window_size = false
 vim.g.neovide_input_use_logo = false
 vim.g.neovide_cursor_animation_length = 0
-
+vim.deprecate = function() end
 
 vim.cmd([[
 autocmd!
